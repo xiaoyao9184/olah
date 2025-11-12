@@ -39,7 +39,7 @@ jobs:
               OLAH_TAG="${VERSION}"
             elif [[ "${{ github.ref }}" == refs/heads/main ]]; then
               OLAH_SOURCE="olah"
-              OLAH_TAG="lastet"
+              OLAH_TAG="latest"
             fi
           elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             OLAH_SOURCE="olah==${{ github.event.inputs.olah_version }}"
@@ -79,7 +79,7 @@ jobs:
             ghcr.io/${{ github.repository_owner }}/olah
           tags: |
             type=raw,value=${{ env.OLAH_TAG }}
-            type=raw,value=lastet
+            type=raw,value=latest
           flavor: |
             latest=false
 
